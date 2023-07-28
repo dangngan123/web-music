@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+ <title>MeloTune-KIMNGAN</title> 
+
+<style>
+    body{
+    width: 100%;
+    height: 100%;
+    background-color: #131313;
+    font-family:'Poppins' , sans-serif;
+    display: inline;
+    align-items: center;
+    
+
+}
+     .song_side nav{
+        width: 95%;
+        height: 10%;
+        margin: auto;
+        /* border: 1px solid #fff; */
+        display: flex;
+        align-items: center;
+
+    }
+    .song_side nav ul{
+        display: flex;
+    }
+    
+    .song_side nav ul li{
+        position: relative;
+        list-style-type: none;
+        font-size: 13px;
+        color: #4c5262;
+        margin-right: 25px;
+        cursor: pointer;
+        transition: .3s linear;
+
+    } 
+    .song_side nav ul li:hover{
+        color: #ffffff; 
+    }
+  
+    .song_side nav ul li:nth-child(1){
+        color: #fff; 
+    }
+    .song_side nav ul li span{
+        position: absolute;
+        width: 100%;
+        height: 2.5px;
+        background: #36e2ec;
+        bottom: -5px;
+        left: 0;
+        border-radius: 20px;
+
+    }
+    .song_side nav .search{
+        position: relative;
+        width: 30%;
+        padding: 1px 10px;
+        border-radius: 20px;
+        color: gray;   
+        margin-left: 100px;
+    }
+    .song_side nav .search::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        background: rgb(184, 184, 184, .1);
+        backdrop-filter: blur(spx);
+        z-index:  -1;
+
+    }
+    .song_side nav .search .bi{
+        font-size: 13px;
+        padding: 3px 0px 0px 10px;
+        
+
+    }
+     .song_side nav .search input{
+       background: none;
+       outline: none;
+       border: none;        
+       padding: 0px 10px;
+       color: #fff;
+       font-size: 12px;
+
+    }
+    .user button{
+       
+        background-color: #0b1320;
+        width: 20%;
+        height: 35px;
+        border-radius: 20px 20px 20px 20px;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        cursor: pointer;
+        width: 100px;
+        height: 35px;
+        margin-left: 350px;
+    } 
+    .header{
+        width: 50%;
+        height: 200px;
+        /* border: 1px solid #fff; */
+        margin-left: 300px;
+        border-radius: 5px 5px 5px 5px;
+        background-color: #472e70;
+        margin-top: 10px;
+    }
+    .header  img {
+        border-radius: 50% 50% 50% 50% ;
+        width: 20%;
+        margin-top: 35px;
+        margin-left: 10px;
+        
+    }
+    .header li{
+    position: relative;
+   list-style-type: none;
+   padding: 5px 0px 5px 20px;
+   display: flex;
+   align-items: center;
+   margin-bottom: 10px;
+   cursor: pointer;
+  }
+  .header  li h3{
+      
+    color: #ffffff;
+   font-size: 25px;
+   margin-left: 15px;
+   margin-top: 20px;
+  }
+  .header h3 .chu{
+    font-size: 13px;
+    color: #4c5262;
+    margin-top: 20px;
+}
+.header .qt{
+    width: 50px;
+    height: 12px;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-top: 48px;
+    border-radius: 30px 30px 30px 30px;
+   
+}
+.header  h5 .qt{
+    color: #fff;
+    font-size: 9px;
+  padding: 5px 5px ;
+    text-align: center;
+  
+}
+.header  h5 .qt:hover{
+    background-color: #4c5262;
+  
+}
+.kvu{
+       
+       width: 50%;
+       height: 100px;
+       /* border: 2px solid #ffffff; */
+       margin-top: 10px;
+       margin-left: 300px;
+       background-color: #f3f1f1;
+       border-radius: 10px 10px 10px 10px;
+   }
+.kvu img{
+        width: 80px;
+        height: 80px;
+         margin-top: 5px;
+      
+    }
+    .kvu li{
+    position: relative;
+   list-style-type: none;
+   padding: 5px 0px 5px 20px;
+   display: flex;
+   align-items: center;
+   margin-bottom: 10px;
+   cursor: pointer;
+ 
+    }
+   
+    .kvu li h5{
+      
+    color: #000000;
+   font-size: 15px;
+   margin-left: 15px;
+}    
+.kvu h5 .chu{
+    font-size: 9px;
+    color: #4c5262;
+
+
+}
+.kgh{
+    width: 50%;
+    height: 20px;
+    /* border: 2px solid #ffffff; */
+    margin-top: 10px;
+    margin-left: 310px;
+    background-color: #131313 ;
+}  
+.music{
+    width: 49%;
+    height: 230px;
+    border: 1px solid #dddcdc;
+    margin-left: 300px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #c3c3c3;
+    border-radius: 10px 10px 10px 10px;
+}
+/* .music  img {
+    width: 50px;
+    height: 50px;
+}
+.music audio{
+  
+    height: 30px; 
+    padding: 10px 10px;
+}
+/* .music .bi{
+    color: #fff;
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 100px;
+/* } 
+.music li{
+    position: relative;
+   list-style-type: none;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   margin-right: 10px;
+}
+.music li h5{
+    font-size: 10px;
+    color: #000000;
+    margin-left: 10px;
+}
+.music h5 .chu{
+    font-size: 9px ;
+    color: #4c5262;
+} */ 
+.music .h4 h4{
+  color: #000000;
+  margin-left: 10px;
+  font-size: 20px;
+  margin-top: 0px;
+
+}
+.audio{
+    width: 80%;
+    height: 50px;
+    /* border: 1px solid #fff; */
+    margin-left: 60px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #b2a2cc;
+}
+.audio li{
+position: relative;
+   list-style-type: none;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+    margin-top: -2px;
+  
+}
+.audio img {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    margin-top: -5px;
+}
+.audio h5{
+    font-size: 10px;
+    margin-left: 10px;
+}
+.audio h5 .chu{
+    font-size: 7px;
+    color: #4c5262;
+}
+.audio audio{
+    width: 45%;
+    height: 30px;
+    margin-left: 20px;
+}
+.audio .bi{
+    color: #fff;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.audio .heart{
+    color: rgb(246, 246, 246);
+        transition: all 0.5s;
+        text-align: right;
+       
+}
+.audio .heart:hover{
+    transform: scale(1.2);
+        color: rgb(238, 55, 55);
+}
+
+.audio1{
+    width: 80%;
+    height: 50px;
+    /* border: 1px solid #fff; */
+    margin-left: 60px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #b2a2cc;
+    margin-top: 10px;
+}
+.audio1 li{
+position: relative;
+   list-style-type: none;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+    margin-top: -2px;
+  
+}
+.audio1 img {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+}
+.audio1 h5{
+    font-size: 10px;
+    margin-left: 10px;
+}
+.audio1 h5 .chu{
+    font-size: 7px;
+    color: #4c5262;
+}
+.audio1 audio{
+    width: 45%;
+    height: 30px;
+    margin-left: 20px;
+}
+.audio1 .bi{
+    color: #fff;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.audio1 .heart{
+    color: rgb(246, 246, 246);
+        transition: all 0.5s;
+        text-align: right;
+       
+}
+.audio1 .heart:hover{
+    transform: scale(1.2);
+        color: rgb(238, 55, 55);
+}
+.audio2{
+    width: 80%;
+    height: 50px;
+    /* border: 1px solid #fff; */
+    margin-left: 60px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #b2a2cc;
+    margin-top: 10px;
+}
+.audio2 li{
+position: relative;
+   list-style-type: none;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+    margin-top: -2px;
+  
+}
+.audio2 img {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+}
+.audio2 h5{
+    font-size: 10px;
+    margin-left: 10px;
+}
+.audio2 h5 .chu{
+    font-size: 7px;
+    color: #4c5262;
+}
+.audio2 audio{
+    width: 45%;
+    height: 30px;
+    margin-left: 80px;
+}
+.audio2 .bi{
+    color: #fff;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.audio2 .heart{
+    color: rgb(246, 246, 246);
+        transition: all 0.5s;
+        text-align: right;
+       
+}
+.audio2 .heart:hover{
+    transform: scale(1.2);
+        color: rgb(238, 55, 55);
+}
+
+</style>
+
+</head>
+<body>
+    <div class="song_side">
+        <nav>
+            <ul>
+                <a href="index.html"><li>Trang Chủ <span></span></li></a>
+                <li>Kho</li>
+                <li>Nghệ Sỹ</li>
+            </ul>
+            <div class="search">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Tìm kiếm bài hát, nghệ sỹ...">
+            </div>
+            <div class="user">
+                <a href="dangnhap.html"><button type="submit"><b>Đăng Nhập</b></button></a>
+            </div>
+        </nav>
+    </div>
+    <div class="header">
+        <li class="img">
+            <img src="img/olew.jpg" alt="nghesy">
+            <h3>O.lew
+                <div class="chu">1.324 người quan tâm
+                </div>
+            </h3>
+            <h5>
+               <div class="qt">
+                QUAN TÂM
+            </div>
+        </h5>
+        </li>
+       
+    </div>
+    
+    <div class="kvu">
+        <li class="chv">
+            <img src="img/7.jpg" alt="img1">
+            <h5>
+             Rồi Ta Sẽ Ngắm Pháo Hoa Cùng Nhau
+                <div class="chu"> O.lew </div>
+            </h5>
+            <audio controls>
+                <source src="audio/HenEmOLanYeuThu2.mp3">
+            </audio>
+        </li>
+    </div>
+   
+        </div>
+    </div>
+</body>
+</html>
